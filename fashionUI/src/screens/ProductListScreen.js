@@ -1,6 +1,6 @@
 // src/screens/ProductListScreen.js
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const products = [
@@ -22,33 +22,31 @@ const ProductListScreen = ({ route }) => {
       <Image source={item.image} style={styles.image} />
       <Text style={styles.name}>{item.name}</Text>
       <Text style={styles.price}>{item.price}</Text>
-      <Button
-        title="View Details"
-        onPress={() => navigation.navigate('ProductDetail', { productId: item.id })}
-      />
     </View>
   );
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <TouchableOpacity style={styles.menuButton}>
+          <Image source={require('../../assets/Menu.png')} style={styles.icon} />
+        </TouchableOpacity>
         <Image source={require('../../assets/Logo.png')} style={styles.logo} />
         <View style={styles.icons}>
           <TouchableOpacity>
-            <Image source={require('../../assets/Menu.png')} style={styles.icon} />
-          </TouchableOpacity>
-          <TouchableOpacity>
             <Image source={require('../../assets/Search.png')} style={styles.icon} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('../../assets/Listview.png')} style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image source={require('../../assets/shoppingBag.png')} style={styles.icon} />
           </TouchableOpacity>
         </View>
       </View>
-      <Text style={styles.title}>{category}</Text>
+      <View style={styles.titleRow}>
+        <Text style={styles.title}>{category}</Text>
+        <TouchableOpacity>
+          <Image source={require('../../assets/Listview.png')} style={styles.listviewIcon} />
+        </TouchableOpacity>
+      </View>
       <FlatList
         data={products}
         renderItem={renderProduct}
@@ -74,15 +72,21 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
     marginBottom: 20,
     paddingHorizontal: 10,
   },
+  menuButton: {
+    paddingRight: 15,
+  },
   logo: {
+    flex: 1,
     width: 100,
     height: 30,
     resizeMode: 'contain',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   icons: {
     flexDirection: 'row',
@@ -93,11 +97,21 @@ const styles = StyleSheet.create({
     height: 24,
     marginLeft: 15,
   },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    paddingHorizontal: 10,
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'left',
-    marginBottom: 20,
+  },
+  listviewIcon: {
+    width: 24,
+    height: 24,
   },
   row: {
     justifyContent: 'space-between',
