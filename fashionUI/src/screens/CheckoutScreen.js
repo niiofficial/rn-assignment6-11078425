@@ -4,9 +4,9 @@ import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from 'react
 import { useNavigation } from '@react-navigation/native';
 
 const cartItems = [
-  { id: '1', name: 'Office Wear', description: 'Office wear for you office', price: '$120', image: require('../../assets/office_wear.jpg') },
-  { id: '2', name: 'Lamerei', description: 'Recycle Boucle Knit Cardigan Pink', price: '$120', image: require('../../assets/lamerei.jpg') },
-  { id: '3', name: 'Church Wear', description: 'Recycle Boucle Knit Cardigan Pink', price: '$120', image: require('../../assets/church_wear.jpg') },
+  { id: '1', name: 'Office Wear', description: 'Office wear for you office', price: '$120', image: require('../../assets/dress1.png') },
+  { id: '2', name: 'Lamerei', description: 'Recycle Boucle Knit Cardigan Pink', price: '$120', image: require('../../assets/dress4.png') },
+  { id: '3', name: 'Church Wear', description: 'Recycle Boucle Knit Cardigan Pink', price: '$120', image: require('../../assets/dress3.png') },
 ];
 
 const CheckoutScreen = () => {
@@ -29,6 +29,7 @@ const CheckoutScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Image source={require('../../assets/Logo.png')} style={styles.logo} />
       <Text style={styles.title}>CHECKOUT</Text>
       <FlatList
         data={cartItems}
@@ -52,11 +53,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
   },
+  logo: {
+    width: 100,
+    height: 30,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
   title: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
+    color: '#888',
   },
   cartItem: {
     flexDirection: 'row',
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
-    height: 100,
+    height: 150,
     resizeMode: 'cover',
     marginRight: 20,
   },
@@ -75,11 +84,12 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: 'bold',
+    marginBottom: 5,
   },
   description: {
     fontSize: 14,
     color: '#888',
-    marginVertical: 5,
+    marginBottom: 5,
   },
   price: {
     fontSize: 16,
@@ -110,6 +120,7 @@ const styles = StyleSheet.create({
   totalPrice: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#f00',
   },
   checkoutButton: {
     backgroundColor: '#000',
