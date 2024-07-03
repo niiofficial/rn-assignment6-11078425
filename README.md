@@ -1,6 +1,6 @@
-# Open Fashion App
+# fashionUI App
 
-Open Fashion App is a React Native application that displays a list of fashion products. Users can view product details and navigate to the checkout screen.
+fashionUI is a React Native application that displays a list of fashion products. Users can view product details and navigate to the checkout screen.
 
 ## Screenshots
 
