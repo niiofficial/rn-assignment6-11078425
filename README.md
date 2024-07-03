@@ -5,7 +5,7 @@ Open Fashion App is a React Native application that displays a list of fashion p
 ## Screenshots
 
 ### Product List Screen
-![Product List Screen](fashionUI\assets\products.png)
+![Product List Screen]('../../assets/products.png')
 
 ### Checkout Screen
 ![Checkout Screen](./assets/checkout.png)
