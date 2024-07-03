@@ -24,7 +24,7 @@ Open Fashion App is a React Native application that displays a list of fashion p
     ```
 2. Navigate to the project directory:
     ```sh
-    cd open-fashion-app
+    cd fashionUI
     ```
 3. Install dependencies:
     ```sh
